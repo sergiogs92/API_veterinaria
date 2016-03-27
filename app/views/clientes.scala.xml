@@ -1,0 +1,9 @@
+@(clientes: List[Cliente], count: Integer)
+<clientes>
+	<count>@count</count>
+	<pagina>
+		@for(c <- clientes) {
+			@_cliente(c)
+		}
+	</pagina>
+</clientes>

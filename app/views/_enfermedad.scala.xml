@@ -1,0 +1,8 @@
+@(enfermedad: Enfermedad)
+<enfermedad id="@enfermedad.getId()">
+	<tipo>@enfermedad.getTipo()</tipo>
+	<nombre>@enfermedad.getNombre()</nombre>
+	<motivo>@enfermedad.getMotivo()</motivo>
+	<datacion>@enfermedad.getDatacion()</datacion>
+	<estado>@enfermedad.getEstado()</estado>
+</enfermedad>

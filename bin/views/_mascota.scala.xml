@@ -1,0 +1,11 @@
+@(mascota: Mascota)
+<mascota id="@mascota.getId()">
+	<codigoMascota>@mascota.getCodigoMascota()</codigoMascota>
+	<apodo>@mascota.getApodo()</apodo>
+	<especie>@mascota.getEspecie()</especie>
+	<raza>@mascota.getRaza()</raza>
+	<fechaNacimiento>@mascota.getFechaNacimiento()</fechaNacimiento>
+	<pesoMedio>@mascota.getPesoMedio()</pesoMedio>
+	<pesoActual>@mascota.getPesoActual()</pesoActual>
+	@_historial(mascota.getHistorial())
+</mascota>

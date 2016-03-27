@@ -1,0 +1,6 @@
+@(vacuna: Vacuna)
+<vacuna id="@vacuna.getId()">
+	<tipo>@vacuna.getTipo()</tipo>
+	<dosis>@vacuna.getDosis()</dosis>
+	<detalle>@vacuna.getDetalle()</detalle>
+</vacuna>

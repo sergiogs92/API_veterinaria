@@ -1,0 +1,6 @@
+@(vacunas: List[Vacuna])
+<vacunas>
+	@for(v <- vacunas) {
+		@_vacuna(v)
+	}
+</vacunas>

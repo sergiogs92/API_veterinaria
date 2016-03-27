@@ -1,0 +1,17 @@
+@(mascotas: List[Mascota], count: Integer, members: Integer)
+<mascotas>
+@if(count != null){
+	<count>@count</count>
+	<members>@members</members>
+	<pagina>
+		@for(m <- mascotas) {
+			@_mascota(m)
+		}
+	</pagina>	
+}
+@if(count == null){
+		@for(m <- mascotas) {
+			@_mascota(m)
+		}
+}	
+</mascotas>

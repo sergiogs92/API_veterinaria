@@ -1,0 +1,79 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET      /                                                                           controllers.Application.index()
+
+# Clientes ~~~~
+GET      /clientes/$pag<[0-9]*>                                                      controllers.Clientes.index(pag: Integer)
+
+# Cliente
+POST     /cliente                                                                    controllers.Clientes.create()
+
+# Cliente by Id ~~~~ 
+GET      /cliente/$uId<[0-9]*>                                                       controllers.Clientes.retrieveById(uId: Long)
+DELETE   /cliente/$uId<[0-9]*>                                                       controllers.Clientes.deleteById(uId: Long)
+PUT      /cliente/$uId<[0-9]*>                                                       controllers.Clientes.updateById(uId: Long)
+
+# Cliente by Code ~~~~
+GET      /cliente/code/$codigoCliente<([0-9]|[A-Z]|[a-z]){8}[-](CLI)>                controllers.Clientes.retrieveByCodigoCliente(codigoCliente: String)
+DELETE   /cliente/code/$codigoCliente<([0-9]|[A-Z]|[a-z]){8}[-](CLI)>                controllers.Clientes.deleteByCodeCliente(codigoCliente: String)
+PUT      /cliente/code/$codigoCliente<([0-9]|[A-Z]|[a-z]){8}[-](CLI)>                controllers.Clientes.updateByCodeCliente(codigoCliente: String)
+
+# Persona by Id ~~~~
+GET      /cliente/$uId<[0-9]*>/personas                                              controllers.Personas.index(uId: Long)
+POST     /cliente/$uId<[0-9]*>/personas                                              controllers.Personas.createById(uId: Long)
+DELETE   /cliente/$uId<[0-9]*>/personas/$tId<[0-9]*>                                 controllers.Personas.deleteById(uId: Long, tId: Long)
+PUT      /cliente/$uId<[0-9]*>/personas/$tId<[0-9]*>                                 controllers.Personas.updateById(uId: Long, tId: Long)
+
+# Persona by Code ~~~~
+POST     /cliente/code/$codigoCliente<([0-9]|[A-Z]|[a-z]){8}[-](CLI)>/personas       controllers.Personas.createByCodeCliente(codigoCliente: String)
+
+# Persona by dni ~~~~
+GET      /persona/dni/$dni<[0-9]{8}[A-Z]{1}>                                         controllers.Personas.retrieveByDni(dni: String)
+PUT      /persona/dni/$dni<[0-9]{8}[A-Z]{1}>                                         controllers.Personas.updateByDni(dni: String)
+DELETE   /persona/dni/$dni<[0-9]{8}[A-Z]{1}>                                         controllers.Personas.deleteByDni(dni: String)
+
+# Mascotas ~~~~
+GET      /mascotas/$especie<([A-Z]|[a-z]|[%C3%BC]|[\s]){0,}>/$pag<[0-9]*>                     controllers.Mascotas.indexByEspecie(especie: String, pag: Integer)
+
+# Mascota by Id ~~~~
+GET      /cliente/$uId<[0-9]*>/mascotas                                              controllers.Mascotas.index(uId: Long)
+POST     /cliente/$uId<[0-9]*>/mascotas                                              controllers.Mascotas.createById(uId: Long)
+DELETE   /cliente/$uId<[0-9]*>/mascotas/$tId<[0-9]*>                                 controllers.Mascotas.deleteById(uId: Long, tId: Long)
+PUT      /cliente/$uId<[0-9]*>/mascotas/$tId<[0-9]*>                                 controllers.Mascotas.updateById(uId: Long, tId: Long)
+
+# Mascota by Code
+GET      /mascota/code/$codigoMascota<([0-9]|[A-Z]|[a-z]){8}[-](PET)>                controllers.Mascotas.retrieveByCodigoMascota(codigoMascota: String)
+POST     /cliente/code/$codigoCliente<([0-9]|[A-Z]|[a-z]){8}[-](CLI)>/mascotas       controllers.Mascotas.createByCodeCliente(codigoCliente: String)
+DELETE   /mascota/code/$codigoMascota<([0-9]|[A-Z]|[a-z]){8}[-](PET)>                controllers.Mascotas.deleteByCodeMascota(codigoMascota: String)
+PUT      /mascota/code/$codigoMascota<([0-9]|[A-Z]|[a-z]){8}[-](PET)>                controllers.Mascotas.updateByCodeMascota(codigoMascota: String)
+
+# Historiales ~~~~
+GET      /mascota/$uId<[0-9]*>/historiales                                           controllers.Historiales.index(uId: Long)
+
+# Clean historial, delete all illness and vaccines
+DELETE   /mascota/$uId<[0-9]*>/historiales/$tId<[0-9]*>                              controllers.Historiales.cleanById(uId: Long, tId: Long)
+DELETE   /mascota/code/$codigoMascota<([0-9]|[A-Z]|[a-z]){8}[-](PET)>/historiales    controllers.Historiales.cleanByCodeMascota(codigoMascota: String)
+
+# Enfermedades by Id ~~~~
+GET      /historial/$uId<[0-9]*>/enfermedades                                        controllers.Enfermedades.index(uId: Long)
+POST     /historial/$uId<[0-9]*>/enfermedades                                        controllers.Enfermedades.createById(uId: Long)
+DELETE   /historial/$uId<[0-9]*>/enfermedades/$tId<[0-9]*>                           controllers.Enfermedades.delete(uId: Long, tId: Long)
+PUT      /historial/$uId<[0-9]*>/enfermedades/$tId<[0-9]*>                           controllers.Enfermedades.update(uId: Long, tId: Long)
+
+# Enfermedades by Code ~~~~
+POST     /mascota/code/$codigoMascota<([0-9]|[A-Z]|[a-z]){8}[-](PET)>/enfermedades   controllers.Enfermedades.createByCodeMascota(codigoMascota: String)
+
+# Vacunas by Id ~~~~
+GET      /historial/$uId<[0-9]*>/vacunas                                             controllers.Vacunas.index(uId: Long)
+POST     /historial/$uId<[0-9]*>/vacunas                                             controllers.Vacunas.createById(uId: Long)
+DELETE   /historial/$uId<[0-9]*>/vacunas/$tId<[0-9]*>                                controllers.Vacunas.delete(uId: Long, tId: Long)
+PUT      /historial/$uId<[0-9]*>/vacunas/$tId<[0-9]*>                                controllers.Vacunas.update(uId: Long, tId: Long)
+
+# Vacunas by Code ~~~~
+POST     /mascota/code/$codigoMascota<([0-9]|[A-Z]|[a-z]){8}[-](PET)>/vacunas        controllers.Vacunas.createByCodeMascota(codigoMascota: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET      /assets/*file                                                               controllers.Assets.versioned(path="/public", file: Asset)

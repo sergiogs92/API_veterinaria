@@ -1,0 +1,6 @@
+@(persona: Persona)
+<persona id="@persona.getId()">
+	<nombre>@persona.getNombre()</nombre>
+	<apellidos>@persona.getApellidos()</apellidos>
+	<dni>@persona.getDni()</dni>
+</persona>

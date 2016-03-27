@@ -1,0 +1,6 @@
+@(enfermedades: List[Enfermedad])
+<enfermedades>
+	@for(e <- enfermedades) {
+		@_enfermedad(e)
+	}
+</enfermedades>

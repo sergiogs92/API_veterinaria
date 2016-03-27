@@ -1,0 +1,17 @@
+@(cliente: Cliente)
+<cliente id="@cliente.getId()">
+	<codigo>@cliente.getCodigoCliente()</codigo>
+	<familia>@cliente.getApellidoFamilia()</familia>
+	<telefono>@cliente.getTelefono()</telefono>
+	<tipoPago>@cliente.getTipoPago()</tipoPago>
+	<personas>
+		@for(c <- cliente.getPersonas()) {
+			@_persona(c)
+		}
+	</personas>
+	<mascotas>
+		@for(c <- cliente.getMascotas()) {
+			@_mascota(c)
+		}
+	</mascotas>
+</cliente>

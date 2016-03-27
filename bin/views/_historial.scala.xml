@@ -1,0 +1,13 @@
+@(historial: Historial)
+<historial id="@historial.getId()">
+	<enfermedades>
+		@for(e <- historial.getEnfermedades()) {
+			@_enfermedad(e)
+		}
+	</enfermedades>
+	<vacunas>
+		@for(v <- historial.getVacunas()) {
+			@_vacuna(v)
+		}
+	</vacunas>
+</historial>

@@ -1,0 +1,6 @@
+@(personas: List[Persona])
+<personas>
+	@for(p <- personas) {
+		@_persona(p)
+	}
+</personas>

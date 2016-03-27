@@ -1,0 +1,36 @@
+11-11 13:21:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "PLAY_EVOLUTIONS" no encontrada
+Table "PLAY_EVOLUTIONS" not found; SQL statement:
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%' [42102-187]
+11-12 11:33:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "HISTORIAL[*] SELECT * FROM CLIENTE"; se esperaba "HELP, {"
+Syntax error in SQL statement "HISTORIAL[*] SELECT * FROM CLIENTE"; expected "HELP, {"; SQL statement:
+HISTORIAL SELECT * FROM CLIENTE [42001-187]
+11-17 21:25:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "CLIENTE[*] SELECT * FROM ENFERMEDAD"; se esperaba "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"
+Syntax error in SQL statement "CLIENTE[*] SELECT * FROM ENFERMEDAD"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+CLIENTE SELECT * FROM ENFERMEDAD [42001-187]
+11-18 23:35:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "DELETE *[*] FROM CLIENTE "; se esperaba "identifier"
+Syntax error in SQL statement "DELETE *[*] FROM CLIENTE "; expected "identifier"; SQL statement:
+Delete * FROM CLIENTE [42001-187]
+11-18 23:35:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "DELETE *[*] FROM CLIENTE "; se esperaba "identifier"
+Syntax error in SQL statement "DELETE *[*] FROM CLIENTE "; expected "identifier"; SQL statement:
+Delete * FROM CLIENTE [42001-187]
+11-18 23:36:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "DELETE WHERE[*] ID=41 FROM CLIENTE "; se esperaba "identifier"
+Syntax error in SQL statement "DELETE WHERE[*] ID=41 FROM CLIENTE "; expected "identifier"; SQL statement:
+delete where id=41 FROM CLIENTE [42001-187]
+11-18 23:36:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "ID" no encontrada
+Table "ID" not found; SQL statement:
+delete id=41 FROM CLIENTE [42102-187]
+11-18 23:36:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "DELETE FROM CLIENTE ID =[*] 41 "
+Syntax error in SQL statement "DELETE FROM CLIENTE ID =[*] 41 "; SQL statement:
+delete FROM CLIENTE id = 41 [42000-187]
+11-18 23:42:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "CLIENTE[*] SELECT * FROM ENFERMEDAD"; se esperaba "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"
+Syntax error in SQL statement "CLIENTE[*] SELECT * FROM ENFERMEDAD"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+CLIENTE SELECT * FROM ENFERMEDAD [42001-187]
